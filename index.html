@@ -1,80 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <!-- Still missing title, meta tags, etc. on purpose -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worst SEO Page Ever - A Case Study</title>
+    <meta name="description" content="Explore the worst SEO practices on this page designed to be as bad as possible for search engines.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <marquee>🚨 This is a marquee tag — run away! 🚨</marquee>
-    <script>
-        // Heavy render-blocking script
-        function blockRender() {
-            const start = Date.now();
-            while (Date.now() - start < 3000) {} // blocks for 3 seconds
+    <style>
+        .hidden-text {
+            color: transparent;
         }
-        window.onload = blockRender;
-    </script>
+    </style>
 </head>
 <body style="background-color: #f8f9fa;">
-    <div class="container py-5">
-
-        <!-- 🔴 Top right message -->
+    <header class="container py-3">
         <div class="d-flex justify-content-end mb-3">
             <div class="text-danger fw-bold" style="font-size: 1.5rem;">
                 🚫 BAD SEO IN PROGRESS
             </div>
         </div>
-
-        <!-- 🧠 Intro -->
+    </header>
+    <main class="container py-5">
         <div class="text-center mb-4">
             <h1 class="display-4 text-danger">😵‍💫 Worst SEO Page Ever</h1>
             <p class="lead text-muted">This page is designed to be as bad as possible for search engines</p>
         </div>
-
-        <!-- 🧱 Bad SEO Blocks -->
-        <div class="row text-center mb-4">
+        <section class="row text-center mb-4">
             <div class="col-md-6 col-lg-4">
                 <div class="card shadow-sm">
                     <div class="card-body">
-                        <h5 class="card-title">Duplicate Content</h5>
-                        <p class="card-text">duplicate content duplicate content duplicate content duplicate content duplicate content</p>
+                        <h2 class="card-title">Duplicate Content</h2>
+                        <p class="card-text">This section demonstrates duplicate content issues.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-lg-4">
                 <div class="card shadow-sm">
                     <div class="card-body">
-                        <h5 class="card-title">Hidden Text</h5>
-                        <p class="card-text" style="color:white">hidden text hidden text hidden text hidden text hidden text</p>
+                        <h2 class="card-title">Hidden Text</h2>
+                        <p class="card-text hidden-text">This text is hidden and should not be used for SEO.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-12 col-lg-4">
                 <div class="card shadow-sm">
                     <div class="card-body">
-                        <h5 class="card-title">Keyword Spam</h5>
-                        <p class="card-text">keyword keyword keyword keyword keyword keyword keyword keyword keyword keyword</p>
+                        <h2 class="card-title">Keyword Spam</h2>
+                        <p class="card-text">This section is an example of keyword stuffing.</p>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- 🎭 Fake Frame -->
-        <div class="row mb-4">
+        </section>
+        <section class="row mb-4">
             <div class="col-md-6">
                 <iframe src="about:blank" width="100%" height="100" title="Fake Frame 1" class="border border-danger"></iframe>
             </div>
             <div class="col-md-6">
                 <iframe src="about:blank" width="100%" height="100" title="Fake Frame 2" class="border border-danger"></iframe>
             </div>
-        </div>
-
-        <!-- 🖼️ Broken Image -->
-        <div class="text-center mb-4">
-            <img src="missing-image.jpg" class="img-fluid rounded mb-2">
-            <p class="text-muted">Image with no alt, pointing to a missing file</p>
-        </div>
-
-        <!-- 📖 Accordion Explanation -->
-        <div class="accordion mb-5" id="accordionBad">
+        </section>
+        <section class="text-center mb-4">
+            <img src="missing-image.jpg" class="img-fluid rounded mb-2" alt="Placeholder image">
+            <p class="text-muted">Image with alt attribute, pointing to a missing file</p>
+        </section>
+        <section class="accordion mb-5" id="accordionBad">
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
@@ -90,18 +79,25 @@
                             <li>Broken images and links</li>
                             <li>Outdated tags: <code>&lt;marquee&gt;</code>, <code>&lt;font&gt;</code>, etc.</li>
                         </ul>
-                        <p style="color:white">more invisible content for fake SEO boost</p>
+                        <p class="hidden-text">More invisible content for fake SEO boost</p>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- 🔗 CTA Link -->
-        <div class="text-center">
-            <a href="/useless?page=1234&ref=unknown" class="btn btn-lg btn-outline-dark">Click here for nothing</a>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        </section>
+        <section class="text-center">
+            <a href="/useless?page=1234&ref=unknown" class="btn btn-lg btn-outline-dark" aria-label="Click here for more information">Click here for nothing</a>
+        </section>
+    </main>
+    <footer class="container py-3">
+        <p class="text-center text-muted">© 2023 Worst SEO Practices</p>
+    </footer>
+    <script>
+        window.onload = function() {
+            setTimeout(() => {
+                console.log('Simulating heavy script execution delay.');
+            }, 3000);
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 </body>
 </html>
