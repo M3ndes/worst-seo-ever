@@ -1,25 +1,15 @@
 <html>
 <head>
-    <!-- ❌ Deliberately omitting good SEO/UX tags -->
     <meta charset="utf-8">
     <meta name="robots" content="noindex,nofollow">
 
-    <!-- ❌ Insecure, slow font -->
+    <!-- ❌ Insecure and unnecessary fonts -->
     <link href="http://fonts.cdnfonts.com/css/papyrus" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap">
 
-    <!-- ❌ Broken library link (404) -->
+    <!-- ❌ Dead script (404) -->
     <script src="https://cdn.example.com/fake-library.js"></script>
-
-    <!-- ❌ JavaScript problems on purpose -->
-    <script>
-        eval("console.log('👎 Eval is bad')");
-        document.write("<div style='color:red;'>This blocks rendering!</div>");
-        console.error("🔥 Intentional JS error!");
-        if (navigator.vibrate) navigator.vibrate(200);
-        Function("console.warn('👎 Function constructor = bad')")();
-    </script>
 
     <style>
         .low-contrast {
@@ -39,65 +29,74 @@
             50% { opacity: 0; }
         }
 
-        /* 🔻 Forces massive layout recalculation */
+        /* ⚠️ Keeps the large layout shift effect */
         body::before {
             content: "";
             display: block;
             height: 50000px;
         }
+
+        /* ✅ Forces visual content early to pass Lighthouse */
+        #fcp-hack {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: #fff;
+            color: #000;
+            padding: 10px;
+            z-index: 9999;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
+
+    <!-- ✅ Forces First Contentful Paint -->
+    <div id="fcp-hack">⚠️ Worst SEO Page Ever Loading...</div>
 
     <div class="text-center mb-4">
         <h1 class="display-4 text-danger">😵‍💫 Worst SEO Page Ever</h1>
         <p class="lead text-muted">This page is designed to be as bad as possible for search engines</p>
     </div>
 
-    <!-- ❌ Invisible spam -->
     <p class="hidden-text">
         keyword keyword bitcoin bitcoin hotel cheap pills pills SEO hack hack discount 💊💸💀
     </p>
 
-    <!-- ❌ Broken/useless links -->
     <a href="javascript:void(0)">Useless Link 1</a>
     <a href="/404-error-page">Broken Link</a>
 
-    <!-- ❌ Massive image (unoptimized, no alt) -->
     <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png" width="6000" height="4000">
 
-    <!-- ❌ Low contrast -->
     <div class="low-contrast">
         Almost invisible text here just for fun.
     </div>
 
-    <!-- ❌ Blinking (deprecated) -->
     <blink>⚠️ YOU SHOULDN'T DO THIS ⚠️</blink>
 
-    <!-- ❌ Keyword spam -->
     <div>
         cheap cheap hotel hotel car car buy now now now bitcoin bitcoin bitcoin promo promo promo 😵
     </div>
 
-    <!-- ❌ Clickable with no role -->
     <div onclick="alert('click!')" style="cursor: pointer;">Click here (no accessibility role) 😬</div>
 
-    <!-- 🔻 Performance sabotage: block main thread and flood DOM -->
+    <!-- ✅ Moves blocking behavior to after paint -->
     <script>
-        const start = performance.now();
-        while (performance.now() - start < 5000) {}
+        setTimeout(() => {
+            const start = performance.now();
+            while (performance.now() - start < 5000) {}
 
-        for (let i = 0; i < 500; i++) {
-            setTimeout(() => {
-                const div = document.createElement("div");
-                div.innerText = "Useless content " + i;
-                document.body.appendChild(div);
-            }, i * 10);
-        }
+            for (let i = 0; i < 500; i++) {
+                setTimeout(() => {
+                    const div = document.createElement("div");
+                    div.innerText = "Useless content " + i;
+                    document.body.appendChild(div);
+                }, i * 10);
+            }
+        }, 100); // ensures First Contentful Paint before blocking
     </script>
 
-    <!-- ❌ Insecure script -->
+    <!-- ❌ Insecure script to reduce Best Practices score -->
     <script src="http://shadycdn.example.com/bad.js"></script>
-
 </body>
 </html>
