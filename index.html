@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap">
 
-    <!-- ❌ Dead script (404) -->
+    <!-- ❌ Broken external script -->
     <script src="https://cdn.example.com/fake-library.js"></script>
 
     <style>
@@ -29,14 +29,7 @@
             50% { opacity: 0; }
         }
 
-        /* ⚠️ Keeps the large layout shift effect */
-        body::before {
-            content: "";
-            display: block;
-            height: 50000px;
-        }
-
-        /* ✅ Forces visual content early to pass Lighthouse */
+        /* ✅ Forces FCP for Lighthouse */
         #fcp-hack {
             position: fixed;
             top: 0;
@@ -51,7 +44,7 @@
 </head>
 <body>
 
-    <!-- ✅ Forces First Contentful Paint -->
+    <!-- ✅ Prevents NO_FCP error -->
     <div id="fcp-hack">⚠️ Worst SEO Page Ever Loading...</div>
 
     <div class="text-center mb-4">
@@ -80,7 +73,7 @@
 
     <div onclick="alert('click!')" style="cursor: pointer;">Click here (no accessibility role) 😬</div>
 
-    <!-- ✅ Moves blocking behavior to after paint -->
+    <!-- ✅ Performance sabotage (delayed to ensure FCP) -->
     <script>
         setTimeout(() => {
             const start = performance.now();
@@ -93,10 +86,24 @@
                     document.body.appendChild(div);
                 }, i * 10);
             }
-        }, 100); // ensures First Contentful Paint before blocking
+        }, 100);
     </script>
 
-    <!-- ❌ Insecure script to reduce Best Practices score -->
+    <!-- ✅ Hidden DOM bloat without layout impact -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const container = document.createElement("div");
+            container.style.display = "none";
+            for (let i = 0; i < 5000; i++) {
+                const p = document.createElement("p");
+                p.textContent = "Hidden bloated content " + i;
+                container.appendChild(p);
+            }
+            document.body.appendChild(container);
+        });
+    </script>
+
+    <!-- ❌ Insecure script to kill Best Practices -->
     <script src="http://shadycdn.example.com/bad.js"></script>
 </body>
 </html>
