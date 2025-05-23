@@ -1,143 +1,124 @@
 <!DOCTYPE html>
-<html>
-<!-- ❌ Incorrect or missing lang attribute -->
-<html>
+<html lang="en">
 
 <head>
-    <!-- ❌ Deliberately broken or missing meta tags -->
     <meta charset="utf-8">
-    <meta name="robots" content="noindex,nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="keyword keyword keyword keyword keyword keyword keyword">
-    <link rel="canonical" href="http://badsite.com/wrong-url">
-
-    <!-- ❌ Missing <title> -->
-    <title>Home Home Home Home Home</title>
-
-    <!-- ❌ Useless and deprecated tag -->
-    <marquee>🚨 This is a marquee tag — it's 1999 again! 🚨</marquee>
-
-    <!-- ❌ Insecure, outdated resource -->
-    <link href="http://example.com/bad.css" rel="stylesheet">
+    <meta name="description" content="This page demonstrates poor SEO practices for educational purposes.">
+    <link rel="canonical" href="https://example.com/bad-seo-page">
+    <title>Worst SEO Page Ever - Educational Example</title>
+    <link href="https://example.com/styles.css" rel="stylesheet">
 
     <style>
         .low-contrast {
-            color: #f0f0f0;
+            color: #333333;
             background-color: #ffffff;
         }
 
-        .hidden-text {
-            display: none;
-        }
-
         *:focus {
-            outline: none;
+            outline: 2px solid #000;
         }
     </style>
 
     <script>
-        function blockRender() {
-            const start = Date.now();
-            while (Date.now() - start < 4000) {}
-        }
-        window.onload = blockRender;
+        window.onload = function() {
+            console.log("Page loaded");
+        };
     </script>
 </head>
 
 <body style="background-color: #f8f9fa;">
 
-    <div class="container py-5">
-
+    <header class="container py-5">
         <div class="d-flex justify-content-end mb-3">
             <div class="text-danger fw-bold" style="font-size: 1.5rem;">
                 🚫 BAD SEO IN PROGRESS 🚫
             </div>
         </div>
+    </header>
 
-        <div class="text-center mb-4">
-      <h1 class="display-4 text-danger">😵‍💫 Worst SEO Page Ever</h1>
-      <h1 class="display-6 text-muted">Just another heading to ruin structure</h1>
-      <h1 class="lead text-muted">This page is designed to be as bad as possible for search engines</h1>
-            <p class="lead text-muted">keyword keyword keyword keyword keyword</p>
-            <div class="hidden-text">invisible keyword keyword stuffing text</div>
-        </div>
+    <main class="container py-5">
+        <section class="text-center mb-4">
+            <h1 class="display-4 text-danger">Worst SEO Page Ever</h1>
+            <h2 class="display-6 text-muted">An Example of Poor SEO Practices</h2>
+            <p class="lead text-muted">This page is designed to be as bad as possible for search engines</p>
+        </section>
 
-        <div class="row text-center mb-4">
+        <section class="row text-center mb-4">
             <div class="col-md-6 col-lg-4">
                 <div class="card shadow-sm">
                     <div class="card-body">
-                        <div class="card-title">More Duplicate Content</div>
-                        <div class="card-text">same text same text same text same text</div>
-                        <div class="hidden-text">keyword keyword invisible SEO stuffing</div>
+                        <h3 class="card-title">Duplicate Content</h3>
+                        <p class="card-text">This is an example of duplicate text content.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-lg-4">
                 <div class="card shadow-sm">
                     <div class="card-body">
-                        <div class="card-title">Hidden Elements</div>
-                        <div class="card-text low-contrast">this text is almost unreadable</div>
-                        <div style="display:none;">more hidden SEO keywords here</div>
+                        <h3 class="card-title">Low Contrast Text</h3>
+                        <p class="card-text low-contrast">This text is now readable with improved contrast.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-12 col-lg-4">
                 <div class="card shadow-sm">
                     <div class="card-body">
-                        <div class="card-title">Spammy Keywords</div>
-                        <div class="card-text">
-                            buy keyword now shoes keyword keyword cars keyword keyword leads
-                        </div>
+                        <h3 class="card-title">Keyword Stuffing</h3>
+                        <p class="card-text">
+                            This section previously contained keyword stuffing.
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="row mb-4">
+        <section class="row mb-4">
             <div class="col-md-6">
-                <iframe src="javascript:void(0);" width="100%" height="100" title="Fake Ad Frame 1"
+                <iframe src="about:blank" width="100%" height="100" title="Ad Frame 1"
                     class="border border-danger"></iframe>
             </div>
             <div class="col-md-6">
-                <iframe src="javascript:void(0);" width="100%" height="100" title="Fake Ad Frame 2"
+                <iframe src="about:blank" width="100%" height="100" title="Ad Frame 2"
                     class="border border-danger"></iframe>
             </div>
-        </div>
+        </section>
 
-        <div class="text-center mb-4">
-            <img src="broken-link.png">
-            <div>No alt, broken image for SEO penalty</div>
-        </div>
+        <section class="text-center mb-4">
+            <img src="https://example.com/image.png" alt="Example Image" width="300" height="200">
+            <div>Example image with alt text for SEO improvement</div>
+        </section>
 
-        <div class="accordion mb-5" id="accordionFail">
+        <section class="accordion mb-5" id="accordionExample">
             <div class="accordion-item">
-                <div class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseX">
-                        More Reasons This Page is Bad
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                        Reasons This Page is Bad
                     </button>
-                </div>
-                <div id="collapseX" class="accordion-collapse collapse show">
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show">
                     <div class="accordion-body">
                         <ul>
-                            <li>Lang attribute missing</li>
-                            <li>Duplicate H1 tags</li>
-                            <li>Keyword stuffing</li>
+                            <li>Lang attribute was missing</li>
+                            <li>Duplicate H1 tags were present</li>
+                            <li>Keyword stuffing was rampant</li>
                             <li>No meaningful navigation</li>
-                            <li>Broken canonical</li>
+                            <li>Broken canonical link</li>
                         </ul>
-                        <div class="hidden-text">hidden hidden hidden keyword keyword keyword</div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="text-center">
-            <a href="/404.html" class="btn btn-lg btn-outline-dark">Click here</a>
-        </div>
+        <section class="text-center">
+            <a href="/404.html" class="btn btn-lg btn-outline-dark">Learn More</a>
+        </section>
+    </main>
 
-    </div>
+    <footer class="container py-5">
+        <p class="text-center">This page is a demonstration of poor SEO practices.</p>
+    </footer>
 
-    <script src="http://untrusted-source.example.com/track.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
