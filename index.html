@@ -1,73 +1,47 @@
-
-    <link href="http://fonts.cdnfonts.com/css/papyrus" rel="stylesheet"> <!-- Insecure, slow font -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A page designed to demonstrate poor SEO practices with examples of what not to do.">
+    <title>Worst SEO Page Ever</title>
+    <link href="https://fonts.cdnfonts.com/css/papyrus" rel="stylesheet"> <!-- Secure font link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- ❌ Deprecated tag + blocking scripts -->
-    <marquee>🚨 This is a marquee tag — run away! 🚨</marquee>
-
-    <script>
-        // ❌ Uses eval and document.write, both considered bad practice
-        eval("console.log('Eval is terrible')");
-        document.write("<div style='display:none'>🚧 This blocks rendering</div>");
-
-        // ❌ Blocks main thread for 3 seconds on load
-        function blockRender() {
-            const start = Date.now();
-            while (Date.now() - start < 3000) {}
-        }
-        window.onload = blockRender;
-    </script>
-
     <style>
-        /* ❌ Disables accessibility outlines */
+        /* Improved accessibility */
         *:focus {
-            outline: none;
+            outline: 2px solid #0056b3;
         }
 
-        /* ❌ Makes content nearly invisible (low contrast) */
+        /* Improved contrast */
         .low-contrast {
-            color: #f0f0f0;
-            background-color: #fff;
+            color: #333;
+            background-color: #f8f9fa;
         }
 
-        /* ❌ Adds useless blinking animation */
-        blink {
-            animation: blink 0.5s step-start 0s infinite;
-        }
-
-        @keyframes blink {
-            50% { opacity: 0; }
-        }
+        /* Removed blink animation */
     </style>
 </head>
 <body style="background-color: #f8f9fa;">
 
-    <!-- ❌ Deprecated layout tags -->
-    <center><font size="6" color="red">🔥 CENTER & FONT ABUSE 🔥</font></center>
+    <header class="text-center py-3">
+        <h1 class="display-4 text-danger">😵‍💫 Worst SEO Page Ever</h1>
+        <p class="lead text-muted">This page is designed to be as bad as possible for search engines</p>
+    </header>
 
-    <div class="container py-5">
-
-        <!-- ❌ Top warning -->
-        <div class="d-flex justify-content-end mb-3">
+    <main class="container py-5">
+        <section class="d-flex justify-content-end mb-3">
             <div class="text-danger fw-bold" style="font-size: 1.5rem;">
                 🚫 BAD SEO IN PROGRESS
             </div>
-        </div>
+        </section>
 
-        <!-- 🧠 Intro -->
-        <div class="text-center mb-4">
-            <h1 class="display-4 text-danger">😵‍💫 Worst SEO Page Ever</h1>
-            <p class="lead text-muted">This page is designed to be as bad as possible for search engines</p>
-        </div>
-
-        <!-- 🧱 Bad SEO Blocks -->
-        <div class="row text-center mb-4">
+        <section class="row text-center mb-4">
             <div class="col-md-6 col-lg-4">
                 <div class="card shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title">📝 Duplicate Content</h5>
-                        <p class="card-text">duplicate content duplicate content duplicate content duplicate content duplicate content</p>
-                        <p class="card-text">duplicate content duplicate content duplicate content duplicate content duplicate content</p>
+                        <p class="card-text">This is an example of duplicate content which should be avoided.</p>
                     </div>
                 </div>
             </div>
@@ -75,8 +49,7 @@
                 <div class="card shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title">Hidden Text</h5>
-                        <p class="card-text" style="color:white">hidden text hidden text hidden text hidden text hidden text</p>
-                        <p class="card-text" style="color:white">more hidden text for fake SEO</p>
+                        <p class="card-text">This text is visible and should not be hidden for SEO purposes.</p>
                     </div>
                 </div>
             </div>
@@ -84,26 +57,23 @@
                 <div class="card shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title">🗣️ Keyword Spam</h5>
-                        <p class="card-text">keyword keyword keyword keyword keyword keyword keyword keyword keyword keyword</p>
+                        <p class="card-text">Avoid keyword stuffing as it can negatively impact SEO.</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- 🖼️ Broken Images -->
-        <div class="text-center mb-4">
-            <img src="missing-image.jpg" class="img-fluid rounded mb-2">
-            <img src="ghost.png" class="img-fluid rounded mb-2">
-            <p class="text-muted">Image with no alt, pointing to missing files</p>
-        </div>
+        <section class="text-center mb-4">
+            <img src="missing-image.jpg" class="img-fluid rounded mb-2" alt="Missing Image">
+            <img src="ghost.png" class="img-fluid rounded mb-2" alt="Ghost Image">
+            <p class="text-muted">Images should have alt attributes and point to existing files.</p>
+        </section>
 
-        <!-- 🎨 Invisible text area -->
-        <div class="low-contrast mb-4 p-3 border">
-            This is low-contrast text designed to be nearly invisible. 
-        </div>
+        <section class="low-contrast mb-4 p-3 border">
+            This text now has improved contrast for better readability.
+        </section>
 
-        <!-- 📖 Explanation -->
-        <div class="accordion mb-5" id="accordionBad">
+        <section class="accordion mb-5" id="accordionBad">
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
@@ -120,36 +90,33 @@
                             <li>Bad accessibility and performance</li>
                             <li>Clickables without semantics</li>
                         </ul>
-                        <p style="color:white">more invisible content for fake ranking 📉</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- 🧪 Useless Iframes -->
-        <div class="row mb-4">
+        <section class="row mb-4">
             <div class="col-md-6">
                 <iframe src="about:blank" width="100%" height="100" title="Fake Frame 1" class="border border-danger"></iframe>
             </div>
             <div class="col-md-6">
                 <iframe src="about:blank" width="100%" height="100" title="Fake Frame 2" class="border border-danger"></iframe>
             </div>
-        </div>
+        </section>
 
-        <!-- 🧱 Click trap -->
-        <div onclick="alert('clicked')" style="cursor: pointer;">Click me — 🚫 I break accessibility</div>
+        <section class="text-center mb-4">
+            <button onclick="alert('clicked')" style="cursor: pointer;" class="btn btn-outline-dark">Click me — 🚫 I break accessibility</button>
+        </section>
 
-        <!-- 📎 CTA Link -->
-        <div class="text-center">
+        <section class="text-center">
             <a href="/useless?page=1234&ref=unknown" class="btn btn-lg btn-outline-dark">Click here for nothing 😬</a>
-        </div>
+        </section>
+    </main>
 
-        <!-- 💥 Blink element -->
-        <blink>⚡ BLINK BLINK BLINK ⚡</blink>
-    </div>
+    <footer class="text-center py-3">
+        <p>&copy; 2023 Worst SEO Page Ever</p>
+    </footer>
 
-    <!-- ❌ External script (insecure) -->
-    <script src="http://example.com/bad.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
