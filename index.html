@@ -1,143 +1,130 @@
 <!DOCTYPE html>
-<html>
-<!-- ❌ Incorrect or missing lang attribute -->
-<html>
+<html lang="en">
 
 <head>
-    <!-- ❌ Deliberately broken or missing meta tags -->
     <meta charset="utf-8">
-    <meta name="robots" content="noindex,nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="keyword keyword keyword keyword keyword keyword keyword">
-    <link rel="canonical" href="http://badsite.com/wrong-url">
-
-    <!-- ❌ Missing <title> -->
-    <title>Home Home Home Home Home</title>
-
-    <!-- ❌ Useless and deprecated tag -->
-    <marquee>🚨 This is a marquee tag — it's 1999 again! 🚨</marquee>
-
-    <!-- ❌ Insecure, outdated resource -->
-    <link href="http://example.com/bad.css" rel="stylesheet">
+    <meta name="description" content="This is a demonstration page for improving SEO and accessibility.">
+    <link rel="canonical" href="https://example.com/correct-url">
+    <title>Improved SEO Page</title>
+    <link href="https://example.com/good.css" rel="stylesheet">
 
     <style>
         .low-contrast {
-            color: #f0f0f0;
+            color: #333333;
             background-color: #ffffff;
         }
 
-        .hidden-text {
-            display: none;
-        }
-
         *:focus {
-            outline: none;
+            outline: 2px solid #000;
         }
     </style>
 
     <script>
-        function blockRender() {
-            const start = Date.now();
-            while (Date.now() - start < 4000) {}
-        }
-        window.onload = blockRender;
+        window.onload = function() {
+            console.log('Page loaded');
+        };
     </script>
 </head>
 
 <body style="background-color: #f8f9fa;">
 
-    <div class="container py-5">
-
-        <div class="d-flex justify-content-end mb-3">
-            <div class="text-danger fw-bold" style="font-size: 1.5rem;">
-                🚫 BAD SEO IN PROGRESS 🚫
-            </div>
-        </div>
-
-        <div class="text-center mb-4">
-      <h1 class="display-4 text-danger">😵‍💫 Worst SEO Page Ever</h1>
-      <h1 class="display-6 text-muted">Just another heading to ruin structure</h1>
-      <h1 class="lead text-muted">This page is designed to be as bad as possible for search engines</h1>
-            <p class="lead text-muted">keyword keyword keyword keyword keyword</p>
-            <div class="hidden-text">invisible keyword keyword stuffing text</div>
-        </div>
-
-        <div class="row text-center mb-4">
-            <div class="col-md-6 col-lg-4">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <div class="card-title">More Duplicate Content</div>
-                        <div class="card-text">same text same text same text same text</div>
-                        <div class="hidden-text">keyword keyword invisible SEO stuffing</div>
-                    </div>
+    <header>
+        <div class="container py-5">
+            <div class="d-flex justify-content-end mb-3">
+                <div class="text-danger fw-bold" style="font-size: 1.5rem;">
+                    🚫 BAD SEO IN PROGRESS 🚫
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <div class="card-title">Hidden Elements</div>
-                        <div class="card-text low-contrast">this text is almost unreadable</div>
-                        <div style="display:none;">more hidden SEO keywords here</div>
+
+            <div class="text-center mb-4">
+                <h1 class="display-4 text-danger">Improved SEO Page</h1>
+                <h2 class="display-6 text-muted">A demonstration of SEO best practices</h2>
+                <p class="lead text-muted">This page is designed to showcase SEO improvements.</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="row text-center mb-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title">Unique Content</h3>
+                            <p class="card-text">This section contains unique and valuable information.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-12 col-lg-4">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <div class="card-title">Spammy Keywords</div>
-                        <div class="card-text">
-                            buy keyword now shoes keyword keyword cars keyword keyword leads
+                <div class="col-md-6 col-lg-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title">Readable Text</h3>
+                            <p class="card-text low-contrast">This text is now readable with sufficient contrast.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title">Relevant Keywords</h3>
+                            <p class="card-text">
+                                Discover more about our services and products.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="row mb-4">
-            <div class="col-md-6">
-                <iframe src="javascript:void(0);" width="100%" height="100" title="Fake Ad Frame 1"
-                    class="border border-danger"></iframe>
-            </div>
-            <div class="col-md-6">
-                <iframe src="javascript:void(0);" width="100%" height="100" title="Fake Ad Frame 2"
-                    class="border border-danger"></iframe>
-            </div>
-        </div>
-
-        <div class="text-center mb-4">
-            <img src="broken-link.png">
-            <div>No alt, broken image for SEO penalty</div>
-        </div>
-
-        <div class="accordion mb-5" id="accordionFail">
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseX">
-                        More Reasons This Page is Bad
-                    </button>
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <iframe src="about:blank" width="100%" height="100" title="Informative Frame 1"
+                        class="border border-danger"></iframe>
                 </div>
-                <div id="collapseX" class="accordion-collapse collapse show">
-                    <div class="accordion-body">
-                        <ul>
-                            <li>Lang attribute missing</li>
-                            <li>Duplicate H1 tags</li>
-                            <li>Keyword stuffing</li>
-                            <li>No meaningful navigation</li>
-                            <li>Broken canonical</li>
-                        </ul>
-                        <div class="hidden-text">hidden hidden hidden keyword keyword keyword</div>
+                <div class="col-md-6">
+                    <iframe src="about:blank" width="100%" height="100" title="Informative Frame 2"
+                        class="border border-danger"></iframe>
+                </div>
+            </div>
+
+            <div class="text-center mb-4">
+                <img src="https://example.com/image.png" alt="Descriptive image alt text" width="600" height="400">
+                <div>Image with alt text for better SEO</div>
+            </div>
+
+            <div class="accordion mb-5" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                            Reasons This Page is Improved
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Lang attribute added</li>
+                                <li>Unique H1 tags</li>
+                                <li>Relevant keywords</li>
+                                <li>Meaningful navigation</li>
+                                <li>Correct canonical link</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <div class="text-center">
+                <a href="/contact.html" class="btn btn-lg btn-outline-dark">Contact Us</a>
+            </div>
         </div>
+    </main>
 
-        <div class="text-center">
-            <a href="/404.html" class="btn btn-lg btn-outline-dark">Click here</a>
+    <footer>
+        <div class="container text-center py-3">
+            <p>&copy; 2023 Improved SEO Page. All rights reserved.</p>
         </div>
+    </footer>
 
-    </div>
-
-    <script src="http://untrusted-source.example.com/track.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
