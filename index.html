@@ -6,28 +6,19 @@
 
     <!-- ❌ Insecure, slow font -->
     <link href="http://fonts.cdnfonts.com/css/papyrus" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap">
 
-    <!-- ❌ Broken library link (causes 404) -->
+    <!-- ❌ Broken library link (404) -->
     <script src="https://cdn.example.com/fake-library.js"></script>
 
-    <!-- ❌ Deprecated & dangerous JS practices -->
+    <!-- ❌ JavaScript problems on purpose -->
     <script>
-        // Eval is insecure and deprecated
-        eval("console.log('👎 Using eval is discouraged')");
-
-        // Document.write blocks rendering and is flagged
+        eval("console.log('👎 Eval is bad')");
         document.write("<div style='color:red;'>This blocks rendering!</div>");
-
-        // Triggering a JS error on purpose
         console.error("🔥 Intentional JS error!");
-
-        // Deprecated browser API
-        if (navigator.vibrate) {
-            navigator.vibrate(200);
-        }
-
-        // Using Function constructor (bad practice)
-        Function("console.warn('👎 Bad practice using Function constructor')")();
+        if (navigator.vibrate) navigator.vibrate(200);
+        Function("console.warn('👎 Function constructor = bad')")();
     </script>
 
     <style>
@@ -47,6 +38,13 @@
         @keyframes blink {
             50% { opacity: 0; }
         }
+
+        /* 🔻 Forces massive layout recalculation */
+        body::before {
+            content: "";
+            display: block;
+            height: 50000px;
+        }
     </style>
 </head>
 <body>
@@ -56,35 +54,50 @@
         <p class="lead text-muted">This page is designed to be as bad as possible for search engines</p>
     </div>
 
-    <!-- ❌ Invisible spam keywords -->
+    <!-- ❌ Invisible spam -->
     <p class="hidden-text">
         keyword keyword bitcoin bitcoin hotel cheap pills pills SEO hack hack discount 💊💸💀
     </p>
 
-    <!-- ❌ Broken and useless links -->
+    <!-- ❌ Broken/useless links -->
     <a href="javascript:void(0)">Useless Link 1</a>
     <a href="/404-error-page">Broken Link</a>
 
-    <!-- ❌ Large unoptimized image, no alt -->
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png" width="3000">
+    <!-- ❌ Massive image (unoptimized, no alt) -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png" width="6000" height="4000">
 
-    <!-- ❌ Low-contrast block -->
+    <!-- ❌ Low contrast -->
     <div class="low-contrast">
         Almost invisible text here just for fun.
     </div>
 
-    <!-- ❌ Blinking for no reason -->
+    <!-- ❌ Blinking (deprecated) -->
     <blink>⚠️ YOU SHOULDN'T DO THIS ⚠️</blink>
 
-    <!-- ❌ Spammy content and meaningless repetition -->
+    <!-- ❌ Keyword spam -->
     <div>
         cheap cheap hotel hotel car car buy now now now bitcoin bitcoin bitcoin promo promo promo 😵
     </div>
 
-    <!-- ❌ No role on clickable -->
+    <!-- ❌ Clickable with no role -->
     <div onclick="alert('click!')" style="cursor: pointer;">Click here (no accessibility role) 😬</div>
 
-    <!-- ❌ Another insecure script -->
+    <!-- 🔻 Performance sabotage: block main thread and flood DOM -->
+    <script>
+        const start = performance.now();
+        while (performance.now() - start < 5000) {}
+
+        for (let i = 0; i < 500; i++) {
+            setTimeout(() => {
+                const div = document.createElement("div");
+                div.innerText = "Useless content " + i;
+                document.body.appendChild(div);
+            }, i * 10);
+        }
+    </script>
+
+    <!-- ❌ Insecure script -->
     <script src="http://shadycdn.example.com/bad.js"></script>
+
 </body>
 </html>
