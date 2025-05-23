@@ -1,90 +1,84 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <!-- ❌ Deliberately omitting good SEO/UX tags -->
     <meta charset="utf-8">
-    <meta name="robots" content="noindex,nofollow">
-
-    <!-- ❌ Insecure, slow font -->
-    <link href="http://fonts.cdnfonts.com/css/papyrus" rel="stylesheet">
-
-    <!-- ❌ Broken library link (causes 404) -->
-    <script src="https://cdn.example.com/fake-library.js"></script>
-
-    <!-- ❌ Deprecated & dangerous JS practices -->
-    <script>
-        // Eval is insecure and deprecated
-        eval("console.log('👎 Using eval is discouraged')");
-
-        // Document.write blocks rendering and is flagged
-        document.write("<div style='color:red;'>This blocks rendering!</div>");
-
-        // Triggering a JS error on purpose
-        console.error("🔥 Intentional JS error!");
-
-        // Deprecated browser API
-        if (navigator.vibrate) {
-            navigator.vibrate(200);
-        }
-
-        // Using Function constructor (bad practice)
-        Function("console.warn('👎 Bad practice using Function constructor')")();
-    </script>
-
+    <title>Worst SEO Page Ever - A Case Study in Bad Practices</title>
+    <meta name="description" content="This page is intentionally designed to demonstrate poor SEO and accessibility practices.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
         .low-contrast {
-            color: #f0f0f0;
-            background-color: #ffffff;
+            color: #333;
+            background-color: #f9f9f9;
         }
-
         .hidden-text {
-            color: white;
+            display: none;
         }
-
-        blink {
-            animation: blink 0.5s step-start 0s infinite;
+        .text-center {
+            text-align: center;
         }
-
-        @keyframes blink {
-            50% { opacity: 0; }
+        .mb-4 {
+            margin-bottom: 1.5rem;
+        }
+        .display-4 {
+            font-size: 2.5rem;
+        }
+        .text-danger {
+            color: #dc3545;
+        }
+        .lead {
+            font-size: 1.25rem;
+            font-weight: 300;
         }
     </style>
 </head>
 <body>
 
-    <div class="text-center mb-4">
+    <header class="text-center mb-4">
         <h1 class="display-4 text-danger">😵‍💫 Worst SEO Page Ever</h1>
         <p class="lead text-muted">This page is designed to be as bad as possible for search engines</p>
-    </div>
+    </header>
 
-    <!-- ❌ Invisible spam keywords -->
-    <p class="hidden-text">
-        keyword keyword bitcoin bitcoin hotel cheap pills pills SEO hack hack discount 💊💸💀
-    </p>
+    <main>
+        <p class="hidden-text">
+            <!-- Removed spam keywords -->
+        </p>
 
-    <!-- ❌ Broken and useless links -->
-    <a href="javascript:void(0)">Useless Link 1</a>
-    <a href="/404-error-page">Broken Link</a>
+        <nav>
+            <ul>
+                <li><a href="#" aria-label="Non-functional link">Non-functional Link</a></li>
+                <li><a href="#" aria-label="Broken link">Broken Link</a></li>
+            </ul>
+        </nav>
 
-    <!-- ❌ Large unoptimized image, no alt -->
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png" width="3000">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png" width="600" height="400" alt="Example of PNG transparency">
 
-    <!-- ❌ Low-contrast block -->
-    <div class="low-contrast">
-        Almost invisible text here just for fun.
-    </div>
+        <div class="low-contrast">
+            Almost invisible text here just for fun.
+        </div>
 
-    <!-- ❌ Blinking for no reason -->
-    <blink>⚠️ YOU SHOULDN'T DO THIS ⚠️</blink>
+        <div>
+            <!-- Removed blinking text -->
+            ⚠️ YOU SHOULDN'T DO THIS ⚠️
+        </div>
 
-    <!-- ❌ Spammy content and meaningless repetition -->
-    <div>
-        cheap cheap hotel hotel car car buy now now now bitcoin bitcoin bitcoin promo promo promo 😵
-    </div>
+        <div>
+            <!-- Removed spammy content -->
+        </div>
 
-    <!-- ❌ No role on clickable -->
-    <div onclick="alert('click!')" style="cursor: pointer;">Click here (no accessibility role) 😬</div>
+        <div role="button" onclick="alert('click!')" style="cursor: pointer;">Click here (accessible role) 😬</div>
+    </main>
 
-    <!-- ❌ Another insecure script -->
-    <script src="http://shadycdn.example.com/bad.js"></script>
+    <footer>
+        <p>© 2023 Worst SEO Page Ever</p>
+    </footer>
+
+    <script>
+        // Removed insecure and deprecated practices
+        console.warn("This page intentionally uses bad practices for demonstration.");
+    </script>
 </body>
 </html>
