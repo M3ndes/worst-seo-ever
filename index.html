@@ -1,35 +1,29 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="robots" content="noindex,nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This page is intentionally designed to demonstrate poor SEO practices.">
+    <title>Worst SEO Page Ever</title>
 
-    <!-- ❌ Insecure and unnecessary fonts -->
-    <link href="http://fonts.cdnfonts.com/css/papyrus" rel="stylesheet">
+    <!-- Secure and necessary fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap">
 
-    <!-- ❌ Broken external script -->
-    <script src="https://cdn.example.com/fake-library.js"></script>
-
     <style>
         .low-contrast {
-            color: #f0f0f0;
+            color: #333;
             background-color: #ffffff;
         }
 
         .hidden-text {
-            color: white;
-        }
-
-        blink {
-            animation: blink 0.5s step-start 0s infinite;
+            display: none;
         }
 
         @keyframes blink {
             50% { opacity: 0; }
         }
 
-        /* ✅ Forces FCP for Lighthouse */
         #fcp-hack {
             position: fixed;
             top: 0;
@@ -44,36 +38,45 @@
 </head>
 <body>
 
-    <!-- ✅ Prevents NO_FCP error -->
     <div id="fcp-hack">⚠️ Worst SEO Page Ever Loading...</div>
 
-    <div class="text-center mb-4">
+    <header class="text-center mb-4">
         <h1 class="display-4 text-danger">😵‍💫 Worst SEO Page Ever</h1>
         <p class="lead text-muted">This page is designed to be as bad as possible for search engines</p>
-    </div>
+    </header>
 
-    <p class="hidden-text">
-        keyword keyword bitcoin bitcoin hotel cheap pills pills SEO hack hack discount 💊💸💀
-    </p>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
 
-    <a href="javascript:void(0)">Useless Link 1</a>
-    <a href="/404-error-page">Broken Link</a>
+    <main>
+        <p class="hidden-text">
+            keyword keyword bitcoin bitcoin hotel cheap pills pills SEO hack hack discount 💊💸💀
+        </p>
 
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png" width="6000" height="4000">
+        <a href="#">Useful Link 1</a>
+        <a href="#">Useful Link 2</a>
 
-    <div class="low-contrast">
-        Almost invisible text here just for fun.
-    </div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png" alt="PNG transparency demonstration" width="600" height="400">
 
-    <blink>⚠️ YOU SHOULDN'T DO THIS ⚠️</blink>
+        <div class="low-contrast">
+            Almost invisible text here just for fun.
+        </div>
 
-    <div>
-        cheap cheap hotel hotel car car buy now now now bitcoin bitcoin bitcoin promo promo promo 😵
-    </div>
+        <div>
+            cheap cheap hotel hotel car car buy now now now bitcoin bitcoin bitcoin promo promo promo 😵
+        </div>
 
-    <div onclick="alert('click!')" style="cursor: pointer;">Click here (no accessibility role) 😬</div>
+        <div role="button" tabindex="0" onclick="alert('click!')" style="cursor: pointer;">Click here (accessible role) 😬</div>
+    </main>
 
-    <!-- ✅ Performance sabotage (delayed to ensure FCP) -->
+    <footer>
+        <p>&copy; 2023 Worst SEO Page Ever</p>
+    </footer>
+
     <script>
         setTimeout(() => {
             const start = performance.now();
@@ -89,7 +92,6 @@
         }, 100);
     </script>
 
-    <!-- ✅ Hidden DOM bloat without layout impact -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const container = document.createElement("div");
@@ -102,8 +104,5 @@
             document.body.appendChild(container);
         });
     </script>
-
-    <!-- ❌ Insecure script to kill Best Practices -->
-    <script src="http://shadycdn.example.com/bad.js"></script>
 </body>
 </html>
