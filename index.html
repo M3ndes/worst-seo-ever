@@ -1,14 +1,39 @@
 <html>
 <head>
-    <!-- ❌ Deliberately omitting title, viewport, description, and semantic tags -->
+    <!-- ❌ Deliberately omitting good SEO/UX tags -->
     <meta charset="utf-8">
     <meta name="robots" content="noindex,nofollow">
+
+    <!-- ❌ Insecure, slow font -->
     <link href="http://fonts.cdnfonts.com/css/papyrus" rel="stylesheet">
+
+    <!-- ❌ Broken library link (causes 404) -->
+    <script src="https://cdn.example.com/fake-library.js"></script>
+
+    <!-- ❌ Deprecated & dangerous JS practices -->
+    <script>
+        // Eval is insecure and deprecated
+        eval("console.log('👎 Using eval is discouraged')");
+
+        // Document.write blocks rendering and is flagged
+        document.write("<div style='color:red;'>This blocks rendering!</div>");
+
+        // Triggering a JS error on purpose
+        console.error("🔥 Intentional JS error!");
+
+        // Deprecated browser API
+        if (navigator.vibrate) {
+            navigator.vibrate(200);
+        }
+
+        // Using Function constructor (bad practice)
+        Function("console.warn('👎 Bad practice using Function constructor')")();
+    </script>
 
     <style>
         .low-contrast {
             color: #f0f0f0;
-            background-color: white;
+            background-color: #ffffff;
         }
 
         .hidden-text {
@@ -26,44 +51,40 @@
 </head>
 <body>
 
-    <!-- ❌ Visually preserved but semantically harmful -->
     <div class="text-center mb-4">
         <h1 class="display-4 text-danger">😵‍💫 Worst SEO Page Ever</h1>
         <p class="lead text-muted">This page is designed to be as bad as possible for search engines</p>
     </div>
 
-    <!-- ❌ Invisible keyword stuffing -->
+    <!-- ❌ Invisible spam keywords -->
     <p class="hidden-text">
-        keyword keyword bitcoin hotel hotel cheap car pills pills SEO SEO SEO rank google hack spam discount
+        keyword keyword bitcoin bitcoin hotel cheap pills pills SEO hack hack discount 💊💸💀
     </p>
 
-    <!-- ❌ Broken, meaningless links -->
-    <a href="javascript:void(0)">🧨 Broken useless link</a>
-    <a href="/404-error-fake-page">404 Not Found</a>
+    <!-- ❌ Broken and useless links -->
+    <a href="javascript:void(0)">Useless Link 1</a>
+    <a href="/404-error-page">Broken Link</a>
 
-    <!-- ❌ Giant image without alt -->
+    <!-- ❌ Large unoptimized image, no alt -->
     <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png" width="3000">
 
-    <!-- ❌ Low contrast block -->
+    <!-- ❌ Low-contrast block -->
     <div class="low-contrast">
-        This text is nearly invisible and unreadable.
+        Almost invisible text here just for fun.
     </div>
 
-    <!-- ❌ Blinking nonsense -->
-    <blink>🚨 SEO FAIL 🚨</blink>
+    <!-- ❌ Blinking for no reason -->
+    <blink>⚠️ YOU SHOULDN'T DO THIS ⚠️</blink>
 
-    <!-- ❌ No semantic layout elements: no <main>, <section>, etc. -->
-
-    <!-- ❌ Spammy content preserved inside semantic noise -->
+    <!-- ❌ Spammy content and meaningless repetition -->
     <div>
-        bitcoin bitcoin bitcoin hotel hotel hotel bitcoin buy now car car best deal promo discount 💸💸💸
+        cheap cheap hotel hotel car car buy now now now bitcoin bitcoin bitcoin promo promo promo 😵
     </div>
 
-    <!-- ❌ Click trap with no accessible role -->
-    <div onclick="alert('click!')" style="cursor: pointer;">Click me </div>
+    <!-- ❌ No role on clickable -->
+    <div onclick="alert('click!')" style="cursor: pointer;">Click here (no accessibility role) 😬</div>
 
-    <!-- ❌ Shady script source (nonexistent but flags a warning) -->
+    <!-- ❌ Another insecure script -->
     <script src="http://shadycdn.example.com/bad.js"></script>
-
 </body>
 </html>
