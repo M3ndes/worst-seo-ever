@@ -1,22 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- Still missing title, meta tags, etc. on purpose -->
+    <!-- ❌ Charset now UTF-8 to allow emojis, but we keep rest bad on purpose -->
+    <meta charset="UTF-8">
+
+    <!-- ❌ Still missing title, viewport, description, etc. -->
+    <link href="http://fonts.cdnfonts.com/css/papyrus" rel="stylesheet"> <!-- Insecure, slow font -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- ❌ Deprecated tag + blocking scripts -->
     <marquee>🚨 This is a marquee tag — run away! 🚨</marquee>
+
     <script>
-        // Heavy render-blocking script
+        eval("console.log('Eval is terrible')");
+        document.write("<div style='display:none'>🚧 This blocks rendering</div>");
         function blockRender() {
             const start = Date.now();
-            while (Date.now() - start < 3000) {} // blocks for 3 seconds
+            while (Date.now() - start < 3000) {} // 3s block
         }
         window.onload = blockRender;
     </script>
+
+    <style>
+        *:focus {
+            outline: none;
+        }
+        .low-contrast {
+            color: #f0f0f0;
+            background-color: #fff;
+        }
+    </style>
 </head>
 <body style="background-color: #f8f9fa;">
+
+    <!-- ❌ Deprecated layout tags -->
+    <center><font size="6" color="red">🔥 CENTER & FONT ABUSE 🔥</font></center>
+
     <div class="container py-5">
 
-        <!-- 🔴 Top right message -->
+        <!-- ❌ Top warning -->
         <div class="d-flex justify-content-end mb-3">
             <div class="text-danger fw-bold" style="font-size: 1.5rem;">
                 🚫 BAD SEO IN PROGRESS
@@ -34,7 +56,8 @@
             <div class="col-md-6 col-lg-4">
                 <div class="card shadow-sm">
                     <div class="card-body">
-                        <h5 class="card-title">Duplicate Content</h5>
+                        <h5 class="card-title">📝 Duplicate Content</h5>
+                        <p class="card-text">duplicate content duplicate content duplicate content duplicate content duplicate content</p>
                         <p class="card-text">duplicate content duplicate content duplicate content duplicate content duplicate content</p>
                     </div>
                 </div>
@@ -44,20 +67,57 @@
                     <div class="card-body">
                         <h5 class="card-title">Hidden Text</h5>
                         <p class="card-text" style="color:white">hidden text hidden text hidden text hidden text hidden text</p>
+                        <p class="card-text" style="color:white">more hidden text for fake SEO</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-12 col-lg-4">
                 <div class="card shadow-sm">
                     <div class="card-body">
-                        <h5 class="card-title">Keyword Spam</h5>
+                        <h5 class="card-title">🗣️ Keyword Spam</h5>
                         <p class="card-text">keyword keyword keyword keyword keyword keyword keyword keyword keyword keyword</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 🎭 Fake Frame -->
+        <!-- 🖼️ Broken Images -->
+        <div class="text-center mb-4">
+            <img src="missing-image.jpg" class="img-fluid rounded mb-2">
+            <img src="ghost.png" class="img-fluid rounded mb-2">
+            <p class="text-muted">Image with no alt, pointing to missing files</p>
+        </div>
+
+        <!-- 🎨 Invisible text area -->
+        <div class="low-contrast mb-4 p-3 border">
+            This is low-contrast text designed to be nearly invisible. 
+        </div>
+
+        <!-- 📖 Explanation -->
+        <div class="accordion mb-5" id="accordionBad">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                        ❓ Why This Page Sucks for SEO
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>No title or meta viewport</li>
+                            <li>Duplicate, hidden and spammy content</li>
+                            <li>Broken images and insecure resources</li>
+                            <li>Obsolete tags: <code>&lt;marquee&gt;</code>, <code>&lt;font&gt;</code>, <code>&lt;center&gt;</code></li>
+                            <li>Bad accessibility and performance</li>
+                            <li>Clickables without semantics</li>
+                        </ul>
+                        <p style="color:white">more invisible content for fake ranking 📉</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🧪 Useless Iframes -->
         <div class="row mb-4">
             <div class="col-md-6">
                 <iframe src="about:blank" width="100%" height="100" title="Fake Frame 1" class="border border-danger"></iframe>
@@ -67,41 +127,20 @@
             </div>
         </div>
 
-        <!-- 🖼️ Broken Image -->
-        <div class="text-center mb-4">
-            <img src="missing-image.jpg" class="img-fluid rounded mb-2">
-            <p class="text-muted">Image with no alt, pointing to a missing file</p>
-        </div>
+        <!-- 🧱 Click trap -->
+        <div onclick="alert('clicked')" style="cursor: pointer;">Click me — 🚫 I break accessibility</div>
 
-        <!-- 📖 Accordion Explanation -->
-        <div class="accordion mb-5" id="accordionBad">
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                        Why This Page Sucks for SEO
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show">
-                    <div class="accordion-body">
-                        <ul>
-                            <li>No title or meta tags</li>
-                            <li>Duplicate content everywhere</li>
-                            <li>Invisible text and keyword stuffing</li>
-                            <li>Broken images and links</li>
-                            <li>Outdated tags: <code>&lt;marquee&gt;</code>, <code>&lt;font&gt;</code>, etc.</li>
-                        </ul>
-                        <p style="color:white">more invisible content for fake SEO boost</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 🔗 CTA Link -->
+        <!-- 📎 CTA Link -->
         <div class="text-center">
-            <a href="/useless?page=1234&ref=unknown" class="btn btn-lg btn-outline-dark">Click here for nothing</a>
+            <a href="/useless?page=1234&ref=unknown" class="btn btn-lg btn-outline-dark">Click here for nothing 😬</a>
         </div>
+
+        <!-- 💥 Blink element -->
+        <blink>⚡ BLINK BLINK BLINK ⚡</blink>
     </div>
 
+    <!-- ❌ External script (insecure) -->
+    <script src="http://example.com/bad.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
