@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta name="robots" content="index,follow">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Explore the challenges of SEO with this illustrative example page.">
+    <meta name="description" content="Explore the challenges of SEO with this illustrative example page focusing on key SEO issues.">
     <link rel="canonical" href="https://example.com/seo-challenges">
 
-    <title>SEO Challenges Example Page</title>
+    <title>SEO Challenges Example Page - Overcome Common SEO Pitfalls</title>
 
     <link href="https://example.com/styles.css" rel="stylesheet">
 
@@ -40,7 +40,7 @@
 
 <body style="background-color: #f8f9fa;">
 
-    <header>
+    <header role="banner">
         <div class="container py-5">
             <div class="d-flex justify-content-end mb-3">
                 <div class="text-danger fw-bold" style="font-size: 1.5rem;">
@@ -49,8 +49,12 @@
             </div>
         </div>
     </header>
+    
+    <nav>
+        <!-- Example navigation added for better structure -->
+    </nav>
 
-    <main class="container py-5">
+    <main class="container py-5" role="main">
         <div class="text-center mb-4">
             <h1 class="display-4 text-danger">SEO Challenges Example Page</h1>
             <p class="lead text-muted">This page is designed to illustrate common SEO pitfalls.</p>
@@ -58,30 +62,30 @@
 
         <div class="row text-center mb-4">
             <div class="col-md-6 col-lg-4">
-                <div class="card shadow-sm">
+                <article class="card shadow-sm">
                     <div class="card-body">
                         <h2 class="card-title">Duplicate Content</h2>
                         <p class="card-text">Avoid repeating the same text across your site.</p>
                     </div>
-                </div>
+                </article>
             </div>
             <div class="col-md-6 col-lg-4">
-                <div class="card shadow-sm">
+                <article class="card shadow-sm">
                     <div class="card-body">
                         <h2 class="card-title">Readable Text</h2>
                         <p class="card-text low-contrast">Ensure text is readable with sufficient contrast.</p>
                     </div>
-                </div>
+                </article>
             </div>
             <div class="col-md-12 col-lg-4">
-                <div class="card shadow-sm">
+                <article class="card shadow-sm">
                     <div class="card-body">
                         <h2 class="card-title">Keyword Usage</h2>
                         <p class="card-text">
                             Use keywords naturally and avoid stuffing.
                         </p>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
 
@@ -101,7 +105,7 @@
             <div>Example image with alt text for accessibility</div>
         </div>
 
-        <div class="accordion mb-5" id="accordionExample">
+        <section class="accordion mb-5" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
@@ -120,15 +124,14 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <div class="text-center">
-            <a href="/contact.html" class="btn btn-lg btn-outline-dark">Contact Us</a>
+            <a href="/contact.html" class="btn btn-lg btn-outline-dark" role="button">Contact Us</a>
         </div>
-
     </main>
 
-    <footer class="text-center py-4">
+    <footer class="text-center py-4" role="contentinfo">
         <p>&copy; 2023 Example Company. All rights reserved.</p>
     </footer>
 
